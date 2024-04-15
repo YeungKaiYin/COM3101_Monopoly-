@@ -101,25 +101,14 @@ public class Player {
     }
 
     private void sortPropertiesByGroup(ArrayList<Property> properties){
-        ArrayList<Utility> utilities = new ArrayList<>();
-        ArrayList<Railroad> railroads = new ArrayList<>();
         ArrayList<Property> sorted = new ArrayList<>();
 
         for(Property property : properties){
-            if(property instanceof Utility){
-                utilities.add((Utility) property);
-            } else if(property instanceof Railroad){
-                railroads.add((Railroad) property);
-            } else {
                 sorted.add(property);
-            }
+
         }
-        Collections.sort(utilities);
-        Collections.sort(railroads);
         Collections.sort(sorted);
 
-        sorted.addAll(railroads);
-        sorted.addAll(utilities);
 
         this.properties = sorted;
     }
@@ -131,28 +120,6 @@ public class Player {
         for(Property property : properties){
             System.out.println(property);
         }
-    }
-
-    public int getNumRailroads(){
-        int numRailroads = 0;
-        for(Property p : properties){
-            if(p instanceof Railroad){
-                numRailroads++;
-            }
-        }
-
-        return numRailroads;
-    }
-
-    public int getNumUtilities(){
-        int numUtilities = 0;
-        for(Property p : properties){
-            if(p instanceof Utility){
-                numUtilities++;
-            }
-        }
-
-        return numUtilities;
     }
 
     //returns list of all properties that Player owns color group

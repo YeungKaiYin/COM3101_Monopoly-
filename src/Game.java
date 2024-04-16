@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class Game {
     private final Dice dice;
     private final Board board;
@@ -47,8 +48,6 @@ public class Game {
         List<PlayerOption> options = Arrays.asList(
                 new ListPropertiesOption(currentPlayer),
                 new BuyHouseOption(currentPlayer),
-                new MortgageOption(currentPlayer),
-                new PayMortgageOption(currentPlayer),
                 new EndTurnOption(this, currentPlayer)
         );
 

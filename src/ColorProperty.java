@@ -7,10 +7,6 @@ public class ColorProperty extends Property {
 
     //rent based on number of houses
     private final int rent1;
-    private final int rent2;
-    private final int rent3;
-    private final int rent4;
-    private final int rentH;
 
     public enum Group{
         BROWN(2),
@@ -29,14 +25,10 @@ public class ColorProperty extends Property {
         }
     }
 
-    public ColorProperty(String name, Group group, int price, int rent, int rent1, int rent2, int rent3, int rent4, int rentH){
+    public ColorProperty(String name, Group group, int price, int rent, int rent1){
         super(name, price, rent);
         this.group = group;
         this.rent1 = rent1;
-        this.rent2 = rent2;
-        this.rent3 = rent3;
-        this.rent4 = rent4;
-        this.rentH = rentH;
 
         switch(group){
             case BROWN:
@@ -90,18 +82,6 @@ public class ColorProperty extends Property {
                 break;
             case 1:
                 rent = rent1;
-                break;
-            case 2:
-                rent = rent2;
-                break;
-            case 3:
-                rent = rent3;
-                break;
-            case 4:
-                rent = rent4;
-                break;
-            case 5:
-                rent = rentH;
                 break;
         }
 

@@ -9,7 +9,7 @@ public class Player {
     private ArrayList<Property> properties = new ArrayList<Property>();
     private final String name;
     private int position;
-    private int money = 1500;
+    private int money = 2000;
 
     public boolean inJail = false;
     public int outOfJailCards = 0;
@@ -37,7 +37,6 @@ public class Player {
     private void broke(int amountNeeded){
         System.out.println("You are missing $" + amountNeeded);
         List<PlayerOption> options = Arrays.asList(
-                new MortgageOption(this)
         );
     }
 

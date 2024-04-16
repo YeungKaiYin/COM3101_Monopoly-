@@ -44,43 +44,7 @@ class BuyHouseOption extends PlayerOption{
     }
 }
 
-class MortgageOption extends PlayerOption {
-    Player player;
 
-    public MortgageOption(Player currentPlayer){
-        super("Mortgage Properties");
-        player = currentPlayer;
-    }
-
-    public void action(){
-        Property mortgageProperty = (Property) Input.selectOptions(player.getUnimprovedProperties(), "Select an unimproved property");
-
-        if(mortgageProperty == null){
-            System.out.println("You do not have any unimproved properties to mortgage");
-        } else {
-            player.mortgage(mortgageProperty);
-        }
-    }
-}
-
-class PayMortgageOption extends PlayerOption {
-    Player player;
-
-    public PayMortgageOption(Player currentPlayer){
-        super("Pay Mortgage");
-        player = currentPlayer;
-    }
-
-    public void action(){
-        Property payMortProperty = (Property) Input.selectOptions(player.getMortgagedProperties(), "Select a property to pay off mortgage");
-
-        if(payMortProperty == null){
-            System.out.println("You do not have any mortgaged properties");
-        } else {
-            player.payMortgage(payMortProperty);
-        }
-    }
-}
 
 class SellPropertyOption extends PlayerOption {
     Player player;
@@ -116,43 +80,3 @@ class EndTurnOption extends PlayerOption{
     }
 }
 
-class PayBailOption extends PlayerOption{
-    Dice dice;
-    Player player;
-    Board board;
-
-    public PayBailOption(Dice dice, Player currentPlayer, Board board){
-        super("Pay $50");
-        this.dice = dice;
-        player = currentPlayer;
-        this.board = board;
-    }
-
-    public void action(){
-        player.addMoney(-50);
-        player.inJail = false;
-        player.move(dice.roll(), board);
-    }
-}
-
-class RollOptionJail extends PlayerOption{
-    Dice dice;
-    Player player;
-    Board board;
-
-    public RollOptionJail(Dice dice, Player currentPlayer, Board board){
-        super("Roll");
-        this.dice = dice;
-        player = currentPlayer;
-        this.board = board;
-    }
-
-    public void action(){
-        int roll = dice.roll();
-
-        if(dice.isDouble()){
-            player.inJail = false;
-            player.move(roll, board);
-        }
-    }
-}

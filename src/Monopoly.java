@@ -3,12 +3,10 @@ import java.util.ArrayList;
 public class Monopoly {
     public static void main(String[] args){
         Dice dice = new Dice();
-        Jail jail = new Jail();
         ArrayList<Player> players = createPlayers(2);
-        Board board = new Board(jail, dice, players);
+        Board board = new Board(dice, players);
 
-        Game game = new Game(jail, dice, board, players);
-        jail.setGame(game);
+        Game game = new Game(dice, board, players);
 
         game.turn(players.get(0));
     }

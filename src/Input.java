@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Input {
+
     public static String read(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
@@ -21,6 +22,7 @@ public class Input {
         try {
             int input = Integer.parseInt(read());
             return list.get(input - 1);
+
         } catch(NumberFormatException | IndexOutOfBoundsException e){
             System.out.println("Enter a valid number");
             return selectOptions(list, message);

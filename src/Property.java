@@ -55,4 +55,8 @@ public abstract class Property extends Square {
             offerBuy(currentPlayer);
         }
     }
+
+    public String getName() {
+        return name;
+    }
 }

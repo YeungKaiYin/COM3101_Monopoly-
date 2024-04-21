@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public abstract class PlayerOption {
     String message;
 
@@ -116,43 +120,8 @@ class EndTurnOption extends PlayerOption{
     }
 }
 
-class PayBailOption extends PlayerOption{
-    Dice dice;
-    Player player;
-    Board board;
 
-    public PayBailOption(Dice dice, Player currentPlayer, Board board){
-        super("Pay $50");
-        this.dice = dice;
-        player = currentPlayer;
-        this.board = board;
-    }
 
-    public void action(){
-        player.addMoney(-50);
-        player.inJail = false;
-        player.move(dice.roll(), board);
-    }
-}
 
-class RollOptionJail extends PlayerOption{
-    Dice dice;
-    Player player;
-    Board board;
 
-    public RollOptionJail(Dice dice, Player currentPlayer, Board board){
-        super("Roll");
-        this.dice = dice;
-        player = currentPlayer;
-        this.board = board;
-    }
 
-    public void action(){
-        int roll = dice.roll();
-
-        if(dice.isDouble()){
-            player.inJail = false;
-            player.move(roll, board);
-        }
-    }
-}

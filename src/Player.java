@@ -58,6 +58,9 @@ public class Player {
     public void ZeroMoney(){
         money=0;
     }
+    public void direct_move(int numSquares){
+        position = numSquares;
+    }
 
     public void moveTo(int toPosition, Board board){
         move((23 - position + toPosition) % 23, board);

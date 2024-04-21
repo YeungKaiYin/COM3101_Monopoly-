@@ -43,7 +43,9 @@ public class Game {
             turn(players.get(0));
         } else {
             turn(players.get(currentIndex + 1));
+
         }
+
     }
 
     //player options after roll and land on a square
@@ -53,7 +55,7 @@ public class Game {
                 new BuyHouseOption(currentPlayer),
                 new MortgageOption(currentPlayer),
                 new PayMortgageOption(currentPlayer),
-                new EnterEditorOption(currentPlayer),
+                new EnterEditorPositionOption(currentPlayer),
                 new EnterEditorMoneyOption(currentPlayer),
                 new EndTurnOption(this, currentPlayer)
         );
@@ -61,7 +63,13 @@ public class Game {
         PlayerOption selectedOption = (PlayerOption) Input.selectOptions(options, "Additional Actions:");
         selectedOption.action();
 
-        showOptions(currentPlayer); //when player does not select end turn
+        int money = currentPlayer.getMoney();
+        if (money<=0){
+            System.out.println("you are bankrupt");
+            System.out.println("you lose the game");
+        }else {
+            showOptions(currentPlayer); //when player does not select end turn
+        }
     }
 
 }

@@ -24,15 +24,15 @@ public class Game {
     public void turn(Player currentPlayer){
         System.out.println("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
 
-            System.out.println("Position: " + board.getCurrentSquare(currentPlayer));
-            int numDoubles = 0;
+        System.out.println("Position: " + board.getCurrentSquare(currentPlayer));
+        int numDoubles = 0;
 
-            do{
-                currentPlayer.move(dice.roll(), board);
-                numDoubles++;
+        do{
+            currentPlayer.move(dice.roll(), board);
+            numDoubles++;
 
-            } while (numDoubles < 3 && dice.isDouble());
-            // roll again if double dice
+        } while (numDoubles < 3 && dice.isDouble());
+        // roll again if double dice
 
         showOptions(currentPlayer);
     }
@@ -65,3 +65,4 @@ public class Game {
     }
 
 }
+

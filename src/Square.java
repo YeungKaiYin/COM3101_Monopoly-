@@ -1,4 +1,7 @@
-public class Square implements Comparable<Square>{
+import java.io.Serializable;
+
+public class Square implements Comparable<Square>, Serializable {
+    private static final long serialVersionUID = 1L;
     protected int index;
     protected final String name;
 

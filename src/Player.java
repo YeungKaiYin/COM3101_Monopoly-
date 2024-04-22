@@ -1,11 +1,13 @@
 import java.awt.*;
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Player {
+public class Player implements Serializable {
+    private static final long serialVersionUID = 1L;
     private ArrayList<Property> properties = new ArrayList<Property>();
     private final String name;
     private int position;
@@ -179,6 +181,8 @@ public class Player {
 
         return mortgaged;
     }
+
+
 
     //check if property is in Player's properties
     private boolean owns(Property property){

@@ -1,9 +1,11 @@
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Game {
+public class Game implements Serializable {
+    private static final long serialVersionUID = 1L;
     private final Dice dice;
     private final Board board;
     private ArrayList<Player> players = new ArrayList<Player>();
@@ -19,7 +21,9 @@ public class Game {
     public ArrayList<Player> getPlayers (){
         return players;
     }
-
+    public void setGameState(Game newGameState){
+        this.players = newGameState.getPlayers();
+    }
     //pass turn to next Player
     public void turn(Player currentPlayer){
         System.out.println("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
@@ -57,6 +61,8 @@ public class Game {
                 new PayMortgageOption(currentPlayer),
                 new EnterEditorPositionOption(currentPlayer),
                 new EnterEditorMoneyOption(currentPlayer),
+                new SaveGameOption(this),
+                new LoadGameOption(this),
                 new EndTurnOption(this, currentPlayer)
         );
 

@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Board {
+public class Board implements Serializable {
+    private static final long serialVersionUID = 1L;
     private final Square[] board = new Square[23];
     // the game board square
     public Dice dice;

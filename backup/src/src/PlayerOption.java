@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 public abstract class PlayerOption {
     String message;
 
@@ -106,76 +101,6 @@ class SellPropertyOption extends PlayerOption {
     }
 }
 
-class EnterEditorMoneyOption extends PlayerOption {
-    private Player player;
-    Scanner in = new Scanner(System.in);
-    public EnterEditorMoneyOption(Player currentPlayer){
-        super("Enter editor Money mode");
-        this.player = currentPlayer;
-    }
-
-    @Override
-    public void action() {
-        System.out.println("How much money you do to set?");
-        int amount = in.nextInt();
-        player.ZeroMoney();
-        player.addMoney(amount);
-    }
-}
-class EnterEditorPositionOption extends PlayerOption{
-    private Player player;
-    Scanner in = new Scanner(System.in);
-    public EnterEditorPositionOption(Player currentPlayer) {
-        super("Enter editor Position mode");
-        this.player = currentPlayer;
-    }
-
-    @Override
-    public void action() {
-        System.out.println("Which position do you go?");
-        int numSquare = in.nextInt();
-        player.direct_move(numSquare);
-    }
-}
-
-class SaveGameOption extends PlayerOption {
-    private Game game;
-
-    public SaveGameOption(Game game) {
-        super("Save Game");
-        this.game = game;
-    }
-
-    @Override
-    public void action() {
-        String filename = "game_save.ser";
-        GameUtilities.saveGame(game, filename);
-        System.out.println("Game saved to '" + filename + "'");
-    }
-}
-
-class LoadGameOption extends PlayerOption{
-    private Game game;
-    public LoadGameOption(Game game){
-        super("load game");
-        this.game = game;
-    }
-    @Override
-    public void action() {
-        // Implement loading logic here
-        // For simplicity, assume a fixed file name or prompt the user for a file name
-        String filename = "game_save.ser";  // This could be dynamic based on user input
-        Game loadedGame = GameUtilities.loadGame(filename);
-        if (loadedGame != null) {
-            System.out.println("Game loaded successfully!");
-            game.setGameState(loadedGame);
-        } else {
-            System.out.println("Failed to load the game.");
-        }
-
-    }
-}
-
 class EndTurnOption extends PlayerOption{
     Game game;
     Player player;
@@ -191,8 +116,43 @@ class EndTurnOption extends PlayerOption{
     }
 }
 
+class PayBailOption extends PlayerOption{
+    Dice dice;
+    Player player;
+    Board board;
 
+    public PayBailOption(Dice dice, Player currentPlayer, Board board){
+        super("Pay $50");
+        this.dice = dice;
+        player = currentPlayer;
+        this.board = board;
+    }
 
+    public void action(){
+        player.addMoney(-50);
+        player.inJail = false;
+        player.move(dice.roll(), board);
+    }
+}
 
+class RollOptionJail extends PlayerOption{
+    Dice dice;
+    Player player;
+    Board board;
 
+    public RollOptionJail(Dice dice, Player currentPlayer, Board board){
+        super("Roll");
+        this.dice = dice;
+        player = currentPlayer;
+        this.board = board;
+    }
 
+    public void action(){
+        int roll = dice.roll();
+
+        if(dice.isDouble()){
+            player.inJail = false;
+            player.move(roll, board);
+        }
+    }
+}

@@ -12,10 +12,13 @@ public class Player implements Serializable {
     private final String name;
     private int position;
     private int money = 1500;
+    private int id;
+    DisplayScene ds=DisplayScene.getInstance();
 
     public Player(String name){
         this.name = name;
         position = 0;
+        ds.SetPlayerId();
     }
 
     public String getName() { return name; }
@@ -23,6 +26,9 @@ public class Player implements Serializable {
     public int getPosition() { return position; }
 
     public int getMoney() { return money; }
+    
+    public void setId(int id) { this.id=id; }
+    public int getId() { return id; }
 
     public void addMoney(int addMoney){
         if(money < -addMoney){
@@ -33,7 +39,7 @@ public class Player implements Serializable {
     }
 
     private void broke(int amountNeeded){
-        System.out.println("You are missing $" + amountNeeded);
+        ds.SetConsole("You are missing $" + amountNeeded);
         List<PlayerOption> options = Arrays.asList(
                 new MortgageOption(this)
         );
@@ -49,12 +55,12 @@ public class Player implements Serializable {
 
         //if pass GO
         if(position >= 23){
-            System.out.println(name + " passed GO and collected $200");
+            ds.SetConsole(name + " passed GO and collected $200");
             money += 200;
             position %= 23;
         }
 
-        System.out.println("Landed on " + board.getCurrentSquare(this));
+        ds.SetConsole("Landed on " + board.getCurrentSquare(this));
         board.getCurrentSquare(this).doAction(this);
     }
     public void ZeroMoney(){

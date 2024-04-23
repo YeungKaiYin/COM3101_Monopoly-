@@ -9,7 +9,7 @@ public class Game implements Serializable {
     private final Dice dice;
     private final Board board;
     private ArrayList<Player> players = new ArrayList<Player>();
-
+    DisplayScene ds=DisplayScene.getInstance();
 
     public Game(Dice dice, Board board, ArrayList<Player> players){
         this.dice = dice;
@@ -26,9 +26,9 @@ public class Game implements Serializable {
     }
     //pass turn to next Player
     public void turn(Player currentPlayer){
-        System.out.println("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
+        ds.SetConsole("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
 
-        System.out.println("Position: " + board.getCurrentSquare(currentPlayer));
+        ds.AddConsole("\nPosition: " + board.getCurrentSquare(currentPlayer));
         int numDoubles = 0;
 
         do{
@@ -71,8 +71,8 @@ public class Game implements Serializable {
 
         int money = currentPlayer.getMoney();
         if (money<=0){
-            System.out.println("you are bankrupt");
-            System.out.println("you lose the game");
+            ds.SetConsole("you are bankrupt");
+            ds.SetConsole("you lose the game");
         }else {
             showOptions(currentPlayer); //when player does not select end turn
         }

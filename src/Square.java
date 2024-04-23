@@ -5,7 +5,7 @@ public class Square implements Comparable<Square>, Serializable {
     protected int index;
     protected final String name;
 
-    public Square(String name){
+    public Square(String name, int pos){
         this.name = name;
     }
 

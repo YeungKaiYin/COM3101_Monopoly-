@@ -1,13 +1,16 @@
 public abstract class Property extends Square {
     private final int price;
     private final int rent;
+    private final int pos;
     protected Player owner;
     public boolean mortgaged;
+    DisplayScene ds=DisplayScene.getInstance();
 
-    public Property(String name, int price, int rent){
-        super(name);
+    public Property(String name, int price, int rent,int pos){
+        super(name,pos);
         this.price = price;
         this.rent = rent;
+        this.pos=pos;
     }
 
     public int getPrice(){
@@ -27,11 +30,11 @@ public abstract class Property extends Square {
     }
 
     public void offerBuy(Player currentPlayer){
-        System.out.println("Would you like to buy " + name + " for $" + price + "?");
-        String response = Input.read().toLowerCase();
+        String response = ds.SetGetInputDialog("Would you like to buy " + name + " for $" + price + "?(y/n)");
 
         if(response.contains("y")){
             bought(currentPlayer);
+            ds.SetLabel(pos,currentPlayer.getId());
         }
     }
 

@@ -11,6 +11,7 @@ public class ColorProperty extends Property {
     private final int rent3;
     private final int rent4;
     private final int rentH;
+    private final int pos;
 
     public enum Group{
         BROWN(2),
@@ -29,14 +30,15 @@ public class ColorProperty extends Property {
         }
     }
 
-    public ColorProperty(String name, Group group, int price, int rent, int rent1, int rent2, int rent3, int rent4, int rentH){
-        super(name, price, rent);
+    public ColorProperty(String name, Group group, int price, int rent, int rent1, int rent2, int rent3, int rent4, int rentH,int pos){
+        super(name, price, rent,pos);
         this.group = group;
         this.rent1 = rent1;
         this.rent2 = rent2;
         this.rent3 = rent3;
         this.rent4 = rent4;
         this.rentH = rentH;
+        this.pos = pos;
 
         switch(group){
             case BROWN:

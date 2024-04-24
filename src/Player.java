@@ -126,10 +126,15 @@ public class Player implements Serializable {
 
     public void listProperties(){
         if(properties.isEmpty()){
-            System.out.println("You do not own any properties");
+            ds.SetConsole("You do not own any properties");
+        }
+        else
+        {
+            ds.SetConsole((""));
         }
         for(Property property : properties){
-            System.out.println(property);
+            
+            ds.AddConsole(property.getName()+"\n");
         }
     }
 

@@ -13,7 +13,7 @@ public class Input {
         DisplayScene ds = DisplayScene.getInstance();
         if(list.size() == 0) return null;
 
-        ds.SetConsole(message + " (Enter a number 1 - " + list.size() + ")");
+        ds.AddConsole(message + " (Enter a number 1 - " + list.size() + ")");
 
         for(int i = 1; i <= list.size(); i++){
             ds.AddConsole(i + ". " + list.get(i - 1).toString());

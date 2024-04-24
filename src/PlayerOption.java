@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public abstract class PlayerOption {
     String message;
-
+    
     public PlayerOption(String message){
         this.message = message;
     }
@@ -31,6 +31,7 @@ class ListPropertiesOption extends PlayerOption{
 }
 
 class BuyHouseOption extends PlayerOption{
+    DisplayScene ds = DisplayScene.getInstance();
     Player player;
 
     public BuyHouseOption(Player currentPlayer){
@@ -42,7 +43,7 @@ class BuyHouseOption extends PlayerOption{
         ColorProperty houseProperty = (ColorProperty) Input.selectOptions(player.getHouseableProperties(), "Select property to purchase house on: ");
 
         if(houseProperty == null){
-            System.out.println("You do not have any properties to place a house on");
+            ds.AddConsole("You do not have any properties to place a house on");
         } else {
             houseProperty.addHouse();
         }
@@ -50,6 +51,7 @@ class BuyHouseOption extends PlayerOption{
 }
 
 class MortgageOption extends PlayerOption {
+    DisplayScene ds = DisplayScene.getInstance();
     Player player;
 
     public MortgageOption(Player currentPlayer){
@@ -61,7 +63,7 @@ class MortgageOption extends PlayerOption {
         Property mortgageProperty = (Property) Input.selectOptions(player.getUnimprovedProperties(), "Select an unimproved property");
 
         if(mortgageProperty == null){
-            System.out.println("You do not have any unimproved properties to mortgage");
+            ds.AddConsole("You do not have any unimproved properties to mortgage");
         } else {
             player.mortgage(mortgageProperty);
         }
@@ -69,6 +71,7 @@ class MortgageOption extends PlayerOption {
 }
 
 class PayMortgageOption extends PlayerOption {
+    DisplayScene ds = DisplayScene.getInstance();
     Player player;
 
     public PayMortgageOption(Player currentPlayer){
@@ -80,7 +83,7 @@ class PayMortgageOption extends PlayerOption {
         Property payMortProperty = (Property) Input.selectOptions(player.getMortgagedProperties(), "Select a property to pay off mortgage");
 
         if(payMortProperty == null){
-            System.out.println("You do not have any mortgaged properties");
+            ds.AddConsole("You do not have any mortgaged properties");
         } else {
             player.payMortgage(payMortProperty);
         }
@@ -88,6 +91,7 @@ class PayMortgageOption extends PlayerOption {
 }
 
 class SellPropertyOption extends PlayerOption {
+    DisplayScene ds = DisplayScene.getInstance();
     Player player;
 
     public SellPropertyOption(Player currentPlayer){
@@ -99,7 +103,7 @@ class SellPropertyOption extends PlayerOption {
         Property sellProperty = (Property) Input.selectOptions(player.getUnimprovedProperties(), "Select a property to sell");
 
         if(sellProperty == null){
-            System.out.println("You do not have properties to sell.");
+            ds.AddConsole("You do not have properties to sell.");
         } else {
             player.sell(sellProperty);
         }
@@ -107,6 +111,7 @@ class SellPropertyOption extends PlayerOption {
 }
 
 class EnterEditorMoneyOption extends PlayerOption {
+    DisplayScene ds = DisplayScene.getInstance();
     private Player player;
     Scanner in = new Scanner(System.in);
     public EnterEditorMoneyOption(Player currentPlayer){
@@ -116,13 +121,14 @@ class EnterEditorMoneyOption extends PlayerOption {
 
     @Override
     public void action() {
-        System.out.println("How much money you do to set?");
-        int amount = in.nextInt();
+        //System.out.println("How much money you do to set?");
+        int amount = Integer.parseInt(ds.SetGetInputDialog("How much money you do to set?"));
         player.ZeroMoney();
         player.addMoney(amount);
     }
 }
 class EnterEditorPositionOption extends PlayerOption{
+    DisplayScene ds = DisplayScene.getInstance();
     private Player player;
     Scanner in = new Scanner(System.in);
     public EnterEditorPositionOption(Player currentPlayer) {
@@ -132,13 +138,14 @@ class EnterEditorPositionOption extends PlayerOption{
 
     @Override
     public void action() {
-        System.out.println("Which position do you go?");
-        int numSquare = in.nextInt();
+        //System.out.println("Which position do you go?");
+        int numSquare = Integer.parseInt(ds.SetGetInputDialog("Which position do you go?"));
         player.direct_move(numSquare);
     }
 }
 
 class SaveGameOption extends PlayerOption {
+    DisplayScene ds = DisplayScene.getInstance();
     private Game game;
 
     public SaveGameOption(Game game) {
@@ -150,11 +157,12 @@ class SaveGameOption extends PlayerOption {
     public void action() {
         String filename = "game_save.ser";
         GameUtilities.saveGame(game, filename);
-        System.out.println("Game saved to '" + filename + "'");
+        ds.SetConsole("Game saved to '" + filename + "'");
     }
 }
 
 class LoadGameOption extends PlayerOption{
+    DisplayScene ds = DisplayScene.getInstance();
     private Game game;
     public LoadGameOption(Game game){
         super("load game");
@@ -167,10 +175,10 @@ class LoadGameOption extends PlayerOption{
         String filename = "game_save.ser";  // This could be dynamic based on user input
         Game loadedGame = GameUtilities.loadGame(filename);
         if (loadedGame != null) {
-            System.out.println("Game loaded successfully!");
+            ds.SetConsole("Game loaded successfully!");
             game.setGameState(loadedGame);
         } else {
-            System.out.println("Failed to load the game.");
+            ds.SetConsole("Failed to load the game.");
         }
 
     }

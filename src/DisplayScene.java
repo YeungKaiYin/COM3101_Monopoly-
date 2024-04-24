@@ -181,130 +181,108 @@ public class DisplayScene extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("jLabel1");
         jLabel1.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(190, 613, 61, 17);
+        jLabel1.setBounds(190, 613, 61, 0);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("jLabel2");
         jLabel2.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(148, 500, 61, 17);
+        jLabel2.setBounds(148, 500, 61, 0);
 
-        jLabel3.setText("jLabel3");
         jLabel3.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 390, 61, 17);
+        jLabel3.setBounds(100, 390, 61, 0);
 
-        jLabel4.setText("jLabel4");
         jLabel4.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(145, 277, 61, 17);
+        jLabel4.setBounds(145, 277, 61, 0);
 
-        jLabel5.setText("jLabel5");
         jLabel5.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(190, 165, 61, 17);
+        jLabel5.setBounds(190, 165, 61, 0);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("jLabel6");
         jLabel6.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(230, 53, 61, 17);
+        jLabel6.setBounds(230, 53, 61, 0);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel7");
         jLabel7.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(320, 5, 61, 17);
+        jLabel7.setBounds(320, 5, 61, 0);
 
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("jLabel8");
         jLabel8.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(410, 5, 61, 17);
+        jLabel8.setBounds(410, 5, 61, 0);
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("jLabel9");
         jLabel9.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(500, 5, 61, 17);
+        jLabel9.setBounds(500, 5, 61, 0);
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("jLabel10");
         jLabel10.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(590, 5, 61, 17);
+        jLabel10.setBounds(590, 5, 61, 0);
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("jLabel11");
         jLabel11.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(675, 5, 61, 17);
+        jLabel11.setBounds(675, 5, 61, 0);
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("jLabel12");
         jLabel12.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(765, 52, 61, 17);
+        jLabel12.setBounds(765, 52, 61, 0);
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("jLabel13");
         jLabel13.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(807, 163, 61, 17);
+        jLabel13.setBounds(807, 163, 61, 0);
 
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("jLabel14");
         jLabel14.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(850, 275, 61, 17);
+        jLabel14.setBounds(850, 275, 61, 0);
 
-        jLabel15.setText("jLabel15");
         jLabel15.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(890, 387, 61, 17);
+        jLabel15.setBounds(890, 387, 61, 0);
 
-        jLabel16.setText("jLabel16");
         jLabel16.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(850, 500, 61, 17);
+        jLabel16.setBounds(850, 500, 61, 0);
 
-        jLabel17.setText("jLabel17");
         jLabel17.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(810, 610, 61, 17);
+        jLabel17.setBounds(810, 610, 61, 0);
 
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("jLabel18");
         jLabel18.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(765, 725, 61, 17);
+        jLabel18.setBounds(765, 725, 61, 0);
 
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("jLabel19");
         jLabel19.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(675, 725, 61, 17);
+        jLabel19.setBounds(675, 725, 61, 0);
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("jLabel20");
         jLabel20.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(585, 725, 61, 17);
+        jLabel20.setBounds(585, 725, 61, 0);
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("jLabel21");
         jLabel21.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(495, 725, 61, 17);
+        jLabel21.setBounds(495, 725, 61, 0);
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("jLabel22");
         jLabel22.setMaximumSize(new java.awt.Dimension(61, 17));
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(410, 725, 61, 17);
+        jLabel22.setBounds(410, 725, 61, 0);
 
         jLabel23.setText("jLabel1");
         getContentPane().add(jLabel23);

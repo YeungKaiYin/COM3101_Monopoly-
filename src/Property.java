@@ -50,7 +50,7 @@ public abstract class Property extends Square {
         else if(owner != null) {
             //square is owned by someone else
             if(!mortgaged){
-                System.out.println(currentPlayer.getName() + " paid " + owner.getName() + " $" + getRent() + " in rent");
+                ds.AddConsole(currentPlayer.getName() + " paid " + owner.getName() + " $" + getRent() + " in rent");
                 currentPlayer.pay(owner, getRent());
             }
         } else {

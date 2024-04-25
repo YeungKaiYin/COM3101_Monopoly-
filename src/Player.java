@@ -1,6 +1,5 @@
-import java.awt.*;
+import javax.swing.*;
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,12 +12,16 @@ public class Player implements Serializable {
     private int position;
     private int money = 1500;
     private int id;
+    private ImageIcon image;
+    private int previousPosition;
     DisplayScene ds=DisplayScene.getInstance();
+
 
     public Player(String name){
         this.name = name;
         position = 0;
         ds.SetPlayerId();
+        previousPosition = 100;
     }
 
     public String getName() { return name; }
@@ -29,6 +32,22 @@ public class Player implements Serializable {
     
     public void setId(int id) { this.id=id; }
     public int getId() { return id; }
+
+    public ImageIcon getImage(){
+        return image;
+    }
+    public void setImage(ImageIcon image){
+        this.image = image;
+    }
+    public int getPreviousPosition() {
+        return previousPosition;
+    }
+
+    public int setPreviousPosition(int previousPosition) {
+        this.previousPosition = previousPosition;
+        return previousPosition;
+    }
+
 
     public void addMoney(int addMoney){
         if(money < -addMoney){

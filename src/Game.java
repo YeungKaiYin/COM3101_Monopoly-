@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -27,12 +28,13 @@ public class Game implements Serializable {
     //pass turn to next Player
     public void turn(Player currentPlayer){
         ds.SetConsole("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
-
         ds.AddConsole("\nPosition: " + board.getCurrentSquare(currentPlayer));
+
         int numDoubles = 0;
 
         do{
             currentPlayer.move(dice.roll(), board);
+            ds.setIcon(board.getCurrentSquare(currentPlayer),currentPlayer);
             numDoubles++;
 
         } while (numDoubles < 3 && dice.isDouble());

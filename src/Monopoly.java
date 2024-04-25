@@ -16,7 +16,6 @@ public class Monopoly {
         ArrayList<Player> players = new ArrayList<>();
         DisplayScene ds= DisplayScene.getInstance();
         for(int i = 1; i <= numPlayers; i++){
-            
             players.add(new Player(ds.SetGetInputDialog("Player " + i + " name: ")));
         }
 

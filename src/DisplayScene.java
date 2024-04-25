@@ -7,11 +7,12 @@
  *
  * @author Reaster
  */
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
 public class DisplayScene extends javax.swing.JFrame {
 
     //ImageIcon imageMap=new ImageIcon("Resources/Map.png");
+
     /**
      * Creates new form Test
      */
@@ -29,7 +30,6 @@ public class DisplayScene extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         Map.setText("");
-        //Map.setIcon(imageMap);
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -102,7 +102,74 @@ public class DisplayScene extends javax.swing.JFrame {
     public void AddConsole(String s){
         console.append("\n"+s);
     }
-    
+    private JLabel previousLabel = null;
+    public void setIcon(Square square, Player currentPlayer) {
+        int labelIndex = square.index;
+        int previousposition = currentPlayer.getPreviousPosition();
+        System.out.println("Attempting to move to label at index: " + labelIndex);
+
+
+        // Update the new label based on the label index
+        switch (labelIndex) {
+            case 1 -> jLabel23.setText(currentPlayer.getName());
+            case 2 -> jLabel24.setText(currentPlayer.getName());
+            case 3 -> jLabel25.setText(currentPlayer.getName());
+            case 4 -> jLabel26.setText(currentPlayer.getName());
+            case 5 -> jLabel27.setText(currentPlayer.getName());
+            case 6 -> jLabel28.setText(currentPlayer.getName());
+            case 7 -> jLabel29.setText(currentPlayer.getName());
+            case 8 -> jLabel30.setText(currentPlayer.getName());
+            case 9 -> jLabel31.setText(currentPlayer.getName());
+            case 10 -> jLabel32.setText(currentPlayer.getName());
+            case 11 -> jLabel33.setText(currentPlayer.getName());
+            case 12 -> jLabel34.setText(currentPlayer.getName());
+            case 13 -> jLabel35.setText(currentPlayer.getName());
+            case 14 -> jLabel36.setText(currentPlayer.getName());
+            case 15 -> jLabel37.setText(currentPlayer.getName());
+            case 16 -> jLabel38.setText(currentPlayer.getName());
+            case 17 -> jLabel39.setText(currentPlayer.getName());
+            case 18 -> jLabel40.setText(currentPlayer.getName());
+            case 19 -> jLabel41.setText(currentPlayer.getName());
+            case 20 -> jLabel42.setText(currentPlayer.getName());
+            case 21 -> jLabel43.setText(currentPlayer.getName());
+            case 22 -> jLabel44.setText(currentPlayer.getName());
+            case 23 -> jLabel45.setText(currentPlayer.getName());
+            default -> System.out.println("Invalid label index: " + labelIndex);
+        }
+        if (previousposition!=100){
+            switch (previousposition){
+                case 1 -> jLabel23.setText("");
+                case 2 -> jLabel24.setText("");
+                case 3 -> jLabel25.setText("");
+                case 4 -> jLabel26.setText("");
+                case 5 -> jLabel27.setText("");
+                case 6 -> jLabel28.setText("");
+                case 7 -> jLabel29.setText("");
+                case 8 -> jLabel30.setText("");
+                case 9 -> jLabel31.setText("");
+                case 10 -> jLabel32.setText("");
+                case 11 -> jLabel33.setText("");
+                case 12 -> jLabel34.setText("");
+                case 13 -> jLabel35.setText("");
+                case 14 -> jLabel36.setText("");
+                case 15 -> jLabel37.setText("");
+                case 16 -> jLabel38.setText("");
+                case 17 -> jLabel39.setText("");
+                case 18 -> jLabel40.setText("");
+                case 19 -> jLabel41.setText("");
+                case 20 -> jLabel42.setText("");
+                case 21 -> jLabel43.setText("");
+                case 22 -> jLabel44.setText("");
+                case 23 -> jLabel45.setText("");
+                default -> System.out.println("Invalid label index: " + previousposition);
+            }
+
+        }
+
+        previousposition = currentPlayer.setPreviousPosition(labelIndex);
+    }
+
+
     public String GetConsole(){
         return console.getText();
     }
@@ -179,6 +246,7 @@ public class DisplayScene extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
+
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setMaximumSize(new java.awt.Dimension(61, 17));
@@ -284,91 +352,91 @@ public class DisplayScene extends javax.swing.JFrame {
         getContentPane().add(jLabel22);
         jLabel22.setBounds(410, 725, 61, 0);
 
-        jLabel23.setText("jLabel1");
+        //jLabel23.setText("jLabel1");
         getContentPane().add(jLabel23);
         jLabel23.setBounds(190, 670, 41, 17);
 
-        jLabel24.setText("jLabel2");
+        //jLabel24.setText("jLabel2");
         getContentPane().add(jLabel24);
         jLabel24.setBounds(148, 560, 41, 17);
 
-        jLabel25.setText("jLabel3");
+        //jLabel25.setText("jLabel3");
         getContentPane().add(jLabel25);
         jLabel25.setBounds(100, 450, 41, 17);
 
-        jLabel26.setText("jLabel4");
+        //jLabel26.setText("jLabel4");
         getContentPane().add(jLabel26);
         jLabel26.setBounds(145, 337, 41, 17);
 
-        jLabel27.setText("jLabel5");
+        //jLabel27.setText("jLabel5");
         getContentPane().add(jLabel27);
         jLabel27.setBounds(190, 225, 41, 17);
 
-        jLabel28.setText("jLabel6");
+        //jLabel28.setText("jLabel6");
         getContentPane().add(jLabel28);
         jLabel28.setBounds(230, 113, 41, 17);
 
-        jLabel29.setText("jLabel7");
+        //jLabel29.setText("jLabel7");
         getContentPane().add(jLabel29);
         jLabel29.setBounds(320, 65, 41, 17);
 
-        jLabel30.setText("jLabel8");
+        //jLabel30.setText("jLabel8");
         getContentPane().add(jLabel30);
         jLabel30.setBounds(410, 65, 41, 17);
 
-        jLabel31.setText("jLabel9");
+        //jLabel31.setText("jLabel9");
         getContentPane().add(jLabel31);
         jLabel31.setBounds(500, 65, 41, 17);
 
-        jLabel32.setText("jLabel10");
+        //jLabel32.setText("jLabel10");
         getContentPane().add(jLabel32);
         jLabel32.setBounds(590, 65, 48, 17);
 
-        jLabel33.setText("jLabel11");
+        //jLabel33.setText("jLabel11");
         getContentPane().add(jLabel33);
         jLabel33.setBounds(675, 65, 48, 17);
 
-        jLabel34.setText("jLabel12");
+        //jLabel34.setText("jLabel12");
         getContentPane().add(jLabel34);
         jLabel34.setBounds(765, 112, 48, 17);
 
-        jLabel35.setText("jLabel13");
+        //jLabel35.setText("jLabel13");
         getContentPane().add(jLabel35);
         jLabel35.setBounds(807, 223, 48, 17);
 
-        jLabel36.setText("jLabel14");
+       //jLabel36.setText("jLabel14");
         getContentPane().add(jLabel36);
         jLabel36.setBounds(850, 335, 48, 17);
 
-        jLabel37.setText("jLabel15");
+        //jLabel37.setText("jLabel15");
         getContentPane().add(jLabel37);
         jLabel37.setBounds(890, 447, 48, 17);
 
-        jLabel38.setText("jLabel16");
+        //jLabel38.setText("jLabel16");
         getContentPane().add(jLabel38);
         jLabel38.setBounds(850, 560, 48, 17);
 
-        jLabel39.setText("jLabel17");
+        //jLabel39.setText("jLabel17");
         getContentPane().add(jLabel39);
         jLabel39.setBounds(810, 670, 48, 17);
 
-        jLabel40.setText("jLabel18");
+        //jLabel40.setText("jLabel18");
         getContentPane().add(jLabel40);
         jLabel40.setBounds(765, 785, 48, 17);
 
-        jLabel41.setText("jLabel19");
+        //jLabel41.setText("jLabel19");
         getContentPane().add(jLabel41);
         jLabel41.setBounds(675, 785, 48, 17);
 
-        jLabel42.setText("jLabel20");
+        //jLabel42.setText("jLabel20");
         getContentPane().add(jLabel42);
         jLabel42.setBounds(585, 785, 48, 17);
 
-        jLabel43.setText("jLabel21");
+        //jLabel43.setText("jLabel21");
         getContentPane().add(jLabel43);
         jLabel43.setBounds(495, 785, 48, 17);
 
-        jLabel44.setText("jLabel22");
+        //jLabel44.setText("jLabel22");
         getContentPane().add(jLabel44);
         jLabel44.setBounds(410, 785, 48, 17);
 
@@ -380,6 +448,7 @@ public class DisplayScene extends javax.swing.JFrame {
         inputTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputTfActionPerformed(evt);
+
             }
         });
         inputTf.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -407,7 +476,7 @@ public class DisplayScene extends javax.swing.JFrame {
 
         Map.setBackground(new java.awt.Color(142, 142, 142));
         Map.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Map.setIcon(new javax.swing.ImageIcon("D:\\COM3101_Monopoly\\COM3101_Monopoly\\Resources\\Map.png")); // NOI18N
+        Map.setIcon(new javax.swing.ImageIcon("C:\\Users\\dalto\\IdeaProjects\\COM3101_Monopoly-v2\\Resources\\Map.png")); // NOI18N
         Map.setToolTipText("");
         Map.addHierarchyListener(new java.awt.event.HierarchyListener() {
             public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
@@ -490,5 +559,6 @@ public class DisplayScene extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JButton rollBt;
-    // End of variables declaration//GEN-END:variables
+
+
 }

@@ -6,8 +6,8 @@ public class Monopoly {
         Dice dice = new Dice();
         ArrayList<Player> players = createPlayers(2);
         Board board = new Board(dice, players);
-        
         Game game = new Game(dice, board, players);
+        game.assignImagesToPlayers(players);
 
         game.turn(players.get(0));
     }

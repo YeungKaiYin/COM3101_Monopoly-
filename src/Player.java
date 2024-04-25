@@ -24,6 +24,7 @@ public class Player implements Serializable {
         previousPosition = 100;
     }
 
+
     public String getName() { return name; }
 
     public int getPosition() { return position; }
@@ -68,6 +69,7 @@ public class Player implements Serializable {
         receiving.addMoney(amount);
         addMoney(-amount);
     }
+
 
     public void move(int numSquares, Board board){
         position += numSquares;
@@ -156,39 +158,8 @@ public class Player implements Serializable {
             ds.AddConsole(property.getName()+"\n");
         }
     }
-
     //returns list of all properties that Player owns color group
-    public ArrayList<ColorProperty> getOwnColorGroupList(){
-        ArrayList<ColorProperty> list = new ArrayList<>();
-        for(Property property: properties){
-            if(property instanceof ColorProperty && ownsGroup(((ColorProperty) property).getGroup())){
-                list.add((ColorProperty) property);
-            }
-        }
-        return list;
-    }
 
-    //return list of all properties that Player can place house
-    public ArrayList<ColorProperty> getHouseableProperties(){
-        ArrayList<ColorProperty> houseable = new ArrayList<>();
-        for(ColorProperty i : getOwnColorGroupList()){
-            boolean lowestHouses = true;
-
-            for(ColorProperty j : getOwnColorGroupList()){
-                if(i.getGroup() == j.getGroup() && i.getNumHouses() > j.getNumHouses()){
-                    lowestHouses = false;
-                }
-            }
-
-            if(lowestHouses && i.getNumHouses() != 5){
-                houseable.add(i);
-            }
-        }
-
-        return houseable;
-    }
-
-    //return list of properties without houses (that can be mortgaged)
     public ArrayList<Property> getUnimprovedProperties(){
         ArrayList<Property> unimproved = new ArrayList<>();
         for(Property property : properties){
@@ -212,23 +183,5 @@ public class Player implements Serializable {
         return mortgaged;
     }
 
-
-
     //check if property is in Player's properties
-    private boolean owns(Property property){
-        return properties.contains(property);
-    }
-
-    //check if Player owns all of a certain color group
-    public boolean ownsGroup(ColorProperty.Group group){
-        int count = 0;
-
-        for(Property property : properties){
-            if(property instanceof ColorProperty && ((ColorProperty) property).getGroup() == group){
-                count++;
-            }
-        }
-
-        return (count == group.maxInGroup);
-    }
 }

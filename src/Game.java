@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class Game implements Serializable {
         this.board = board;
         this.players = players;
 
+
     }
 
     public ArrayList<Player> getPlayers (){
@@ -27,6 +29,7 @@ public class Game implements Serializable {
     }
     //pass turn to next Player
     public void turn(Player currentPlayer){
+        System.out.println("id"+currentPlayer.getId());
         ds.SetConsole("\n" + currentPlayer.getName() + "'s turn!\nMoney: $" + currentPlayer.getMoney());
         ds.AddConsole("\nPosition: " + board.getCurrentSquare(currentPlayer));
 
@@ -52,6 +55,14 @@ public class Game implements Serializable {
 
         }
 
+    }
+    public void assignImagesToPlayers(ArrayList<Player> players) {
+        for (int i = 0; i < players.size(); i++) {
+            String imagePath = "C:\\Users\\dalto\\IdeaProjects\\COM3101_Monopoly-v2\\Resources\\player" + (i + 1) + ".png";
+            ImageIcon icon = new ImageIcon(imagePath);
+            players.get(i).setImage(icon);
+            //System.out.println("image"+i);
+        }
     }
 
     //player options after roll and land on a square

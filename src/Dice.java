@@ -8,14 +8,14 @@ public class Dice implements Serializable {
     boolean rolled=false;
 
     public int roll(){
-        ds.SetConsole("Press enter to roll");
+        ds.AddConsole("Press enter to roll");
         ds.Roll();
         //Input.read();
         
         roll1 = (int) (Math.random() * 6 + 1);
         roll2 = (int) (Math.random() * 6 + 1);
 
-        ds.SetConsole("Rolled a " + roll1 + " and " + roll2+" Total :"+(roll1 + roll2));
+        ds.AddConsole("Rolled a " + roll1 + " and " + roll2+" Total :"+(roll1 + roll2));
         return roll1 + roll2;
     }
 

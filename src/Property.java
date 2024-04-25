@@ -34,7 +34,7 @@ public abstract class Property extends Square {
 
         if(response.contains("y")){
             bought(currentPlayer);
-            ds.SetLabel(pos,currentPlayer.getId());
+            ds.SetLabel(pos,currentPlayer.getName());
         }
     }
 

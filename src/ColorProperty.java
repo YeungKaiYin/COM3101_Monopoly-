@@ -6,11 +6,7 @@ public class ColorProperty extends Property {
     private final int houseCost;
 
     //rent based on number of houses
-    private final int rent1;
-    private final int rent2;
-    private final int rent3;
-    private final int rent4;
-    private final int rentH;
+    private final int rent;
     private final int pos;
 
     public enum Group{
@@ -30,14 +26,10 @@ public class ColorProperty extends Property {
         }
     }
 
-    public ColorProperty(String name, Group group, int price, int rent, int rent1, int rent2, int rent3, int rent4, int rentH,int pos){
+    public ColorProperty(String name, Group group, int price, int rent,int pos){
         super(name, price, rent,pos);
         this.group = group;
-        this.rent1 = rent1;
-        this.rent2 = rent2;
-        this.rent3 = rent3;
-        this.rent4 = rent4;
-        this.rentH = rentH;
+        this.rent = rent;
         this.pos = pos;
 
         switch(group){
@@ -70,43 +62,9 @@ public class ColorProperty extends Property {
         return houseCost;
     }
 
-    public void addHouse(){
-        getOwner().addMoney(-houseCost);
-        numHouses++;
-        if(numHouses == 5){
-            System.out.println("Purchased a hotel on " + name + " for " + houseCost);
-        } else {
-            System.out.println("Purchased a house on " + name + " for " + houseCost);
-        }
-    }
 
     @Override
     public int getRent() {
-        int rent = 0;
-        switch(numHouses){
-            case 0:
-                rent = super.getRent();
-                if(getOwner().ownsGroup(group)){
-                    rent *= 2;
-                }
-                break;
-            case 1:
-                rent = rent1;
-                break;
-            case 2:
-                rent = rent2;
-                break;
-            case 3:
-                rent = rent3;
-                break;
-            case 4:
-                rent = rent4;
-                break;
-            case 5:
-                rent = rentH;
-                break;
-        }
-
         return rent;
     }
 }

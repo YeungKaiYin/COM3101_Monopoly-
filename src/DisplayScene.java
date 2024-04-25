@@ -107,20 +107,21 @@ public class DisplayScene extends javax.swing.JFrame {
         int labelIndex = square.index;
         int previousposition = currentPlayer.getPreviousPosition();
         System.out.println("Attempting to move to label at index: " + labelIndex);
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\dalto\\IdeaProjects\\COM3101_Monopoly-v2\\Resources\\player.png");
 
 
         // Update the new label based on the label index
         switch (labelIndex) {
-            case 1 -> jLabel23.setText(currentPlayer.getName());
-            case 2 -> jLabel24.setText(currentPlayer.getName());
-            case 3 -> jLabel25.setText(currentPlayer.getName());
-            case 4 -> jLabel26.setText(currentPlayer.getName());
-            case 5 -> jLabel27.setText(currentPlayer.getName());
-            case 6 -> jLabel28.setText(currentPlayer.getName());
-            case 7 -> jLabel29.setText(currentPlayer.getName());
-            case 8 -> jLabel30.setText(currentPlayer.getName());
-            case 9 -> jLabel31.setText(currentPlayer.getName());
-            case 10 -> jLabel32.setText(currentPlayer.getName());
+            case 1 -> jLabel23.setIcon(imageIcon);
+            case 2 -> jLabel24.setIcon(imageIcon);
+            case 3 -> jLabel25.setIcon(imageIcon);
+            case 4 -> jLabel26.setIcon(imageIcon);
+            case 5 -> jLabel27.setIcon(imageIcon);
+            case 6 -> jLabel28.setIcon(imageIcon);
+            case 7 -> jLabel29.setIcon(imageIcon);
+            case 8 -> jLabel30.setIcon(imageIcon);
+            case 9 -> jLabel31.setIcon(imageIcon);
+            case 10 -> jLabel32.setIcon(imageIcon);
             case 11 -> jLabel33.setText(currentPlayer.getName());
             case 12 -> jLabel34.setText(currentPlayer.getName());
             case 13 -> jLabel35.setText(currentPlayer.getName());

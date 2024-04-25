@@ -58,7 +58,6 @@ public class Game implements Serializable {
     private void showOptions(Player currentPlayer){
         List<PlayerOption> options = Arrays.asList(
                 new ListPropertiesOption(currentPlayer),
-                new BuyHouseOption(currentPlayer),
                 new MortgageOption(currentPlayer),
                 new PayMortgageOption(currentPlayer),
                 new EnterEditorPositionOption(currentPlayer),

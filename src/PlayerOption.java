@@ -30,25 +30,7 @@ class ListPropertiesOption extends PlayerOption{
     }
 }
 
-class BuyHouseOption extends PlayerOption{
-    DisplayScene ds = DisplayScene.getInstance();
-    Player player;
 
-    public BuyHouseOption(Player currentPlayer){
-        super("Buy Houses");
-        player = currentPlayer;
-    }
-
-    public void action(){
-        ColorProperty houseProperty = (ColorProperty) Input.selectOptions(player.getHouseableProperties(), "Select property to purchase house on: ");
-
-        if(houseProperty == null){
-            ds.AddConsole("You do not have any properties to place a house on");
-        } else {
-            houseProperty.addHouse();
-        }
-    }
-}
 
 class MortgageOption extends PlayerOption {
     DisplayScene ds = DisplayScene.getInstance();

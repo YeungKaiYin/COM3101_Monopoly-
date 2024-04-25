@@ -436,11 +436,11 @@ public class DisplayScene extends javax.swing.JFrame {
         jLabel44.setBounds(410, 785, 100, 50);
 
 
-        jLabel45.setText("jLabel45");
+        //jLabel45.setText("jLabel45");
         getContentPane().add(jLabel45);
         jLabel45.setBounds(270, 770, 48, 17);
 
-        jLabel46.setText("jLabel46");
+        //jLabel46.setText("jLabel46");
         getContentPane().add(jLabel46);
         jLabel46.setBounds(270, 790, 48, 17);
 

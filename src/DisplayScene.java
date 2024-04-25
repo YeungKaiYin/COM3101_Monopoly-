@@ -103,8 +103,8 @@ public class DisplayScene extends javax.swing.JFrame {
         console.append("\n"+s);
     }
     private JLabel previousLabel = null;
-    public void setIcon(Square square, Player currentPlayer) {
-        int labelIndex = square.index;
+    public void setIcon(Player currentPlayer) {
+        int labelIndex = currentPlayer.getPosition();
         int previousposition = currentPlayer.getPreviousPosition();
         System.out.println(currentPlayer.getName());
         System.out.println(currentPlayer.getImage().getDescription());

@@ -123,6 +123,7 @@ class EnterEditorPositionOption extends PlayerOption{
         //System.out.println("Which position do you go?");
         int numSquare = Integer.parseInt(ds.SetGetInputDialog("Which position do you go?"));
         player.direct_move(numSquare);
+        ds.setIcon(player);
     }
 }
 

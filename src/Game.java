@@ -37,7 +37,7 @@ public class Game implements Serializable {
 
         do{
             currentPlayer.move(dice.roll(), board);
-            ds.setIcon(board.getCurrentSquare(currentPlayer),currentPlayer);
+            ds.setIcon(currentPlayer);
             numDoubles++;
 
         } while (numDoubles < 3 && dice.isDouble());
@@ -83,8 +83,8 @@ public class Game implements Serializable {
 
         int money = currentPlayer.getMoney();
         if (money<=0){
-            ds.SetConsole("you are bankrupt");
             ds.SetConsole("you lose the game");
+            ds.SetConsole("you are bankrupt");
         }else {
             showOptions(currentPlayer); //when player does not select end turn
         }

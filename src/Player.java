@@ -117,21 +117,6 @@ public class Player implements Serializable {
         addMoney( (int) (-property.getPrice() * 0.55) );
     }
 
-    public int getWorth(){
-        int total = 0;
-
-        for(Property p : properties){
-            if(p instanceof ColorProperty){
-                total += (((ColorProperty) p).getNumHouses() * ((ColorProperty) p).getHouseCost()) / 2;
-            }
-
-            total += p.getPrice() / 2;
-        }
-
-        return total + money;
-    }
-
-
     private void sortPropertiesByGroup(ArrayList<Property> properties){
         ArrayList<Property> sorted = new ArrayList<>();
 
